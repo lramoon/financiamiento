@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora financiamiento</title>
+    <title>Calculadora financiamiento</title>    
     <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
     <script type="module" src="./node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
     <script type="module" src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js.map"></script>
+    <script type="module" src="./src/js/main.js"></script>
 </head>
 <body>
 
@@ -15,37 +16,50 @@
      <h3 class="text-center">Calcula tu financiamiento</h3>
 
      <div class="row justify-content-center">
-        <div class="col-4 my-3">
-               <label for="inputMarca" class="form-label">Marca</label>
-               <input type="text" class="form-control" id="inputMarca" placeholder="Marca" aria-label="Marca">               
+        <div class="col-lg-4 col-12 my-3">
+               <label for="selectMarca" class="form-label">Marca</label>
+               <select class="form-select" id="selectMarca" aria-label="Seleccione Marca">
+                <option selected hidden>Seleccione Marca</option>               
+               </select>
         </div>
-        <div class="col-4 my-3">
-               <label for="inputModelo" class="form-label">Modelo</label>
-               <input type="text" class="form-control" id="inputModelo" placeholder="Modelo" aria-label="Modelo">
+        <div class="col-lg-4 col-12 my-3">
+               <label for="selectModelo" class="form-label">Modelo</label>
+               <select class="form-select" id="selectModelo" aria-label="Seleccione Modelo">
+                <option selected hidden>Seleccione Modelo</option>
+               </select>
         </div>
-        <div class="col-4 my-3">
+        <div class="col-lg-4 col-12 my-3">
+            <label for="selectYear" class="form-label">Año</label>
+            <select class="form-select" id="selectYear" aria-label="Seleccione Año">
+             <option selected hidden>Seleccione Año</option>            
+            </select>
+     </div>
+        <div class="col-lg-4 col-6 my-3">
                <label for="inputInicial" class="form-label">Inicial</label>
-               <input type="text" class="form-control" id="inputInicial" placeholder="Inicial" aria-label="Inicial">
+               <input type="text" class="form-control" id="inputInicial" placeholder="Inicial" aria-label="Inicial" readonly>
         </div>
-        <div class="col-4 my-3">
+        <div class="col-lg-4 col-6 my-3">
             <label for="inputPeriodoDeMeses" class="form-label">Periodo de meses</label>
-            <input type="text" class="form-control" id="inputPeriodoDeMeses" placeholder="Periodo de meses" aria-label="Periodo de meses">
+            <input type="text" class="form-control" id="inputPeriodoDeMeses" placeholder="Periodo de meses" aria-label="Periodo de meses" readonly>
         </div>
-        <div class="col-4 my-3">
-            <label for="inputMensaulidad" class="form-label">Mensaulidad</label>
-            <input type="text" class="form-control" id="inputMensaulidad" placeholder="Mensaulidad" aria-label="Mensaulidad">               
+        <div class="col-lg-4 col-6 my-3">
+            <label for="inputMensualidad" class="form-label">Mensualidad</label>
+            <input type="text" class="form-control" id="inputMensualidad" placeholder="Mensualidad" aria-label="Mensualidad" readonly>
         </div>
-        <div class="col-4 my-3">
+        <div class="col-lg-4 col-6 my-3">
             <label for="inputInteresTotal" class="form-label">Interés total</label>
-            <input type="text" class="form-control" id="inputInteresTotal" placeholder="InteresTotal" aria-label="InteresTotal">
+            <input type="text" class="form-control" id="inputInteresTotal" placeholder="InteresTotal" aria-label="InteresTotal" readonly>
         </div>
-        <div class="col-4 my-3">
+        <div class="col-lg-4 col-6 my-3">
             <label for="inputPagosTotales" class="form-label">Pagos totales</label>
-            <input type="text" class="form-control" id="inputPagosTotales" placeholder="Pagos totales" aria-label="Pagos totales">
+            <input type="text" class="form-control" id="inputPagosTotales" placeholder="Pagos totales" aria-label="Pagos totales" readonly>
+        </div>
+        <div class="col-lg-12 col-12 my-3">
+            <h5 id="bancos"></h5>
         </div>
      </div>
 
    </div>
-    
+   
 </body>
 </html>
