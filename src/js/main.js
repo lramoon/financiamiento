@@ -13,9 +13,10 @@ window.addEventListener("DOMContentLoaded", (e) => {
 		let select = document.getElementById("selectPeriodoDeMeses");
 		const defaultOption = document.createElement("option");
 		defaultOption.value = "";
-		defaultOption.textContent = "Seleccione una opción";
+		defaultOption.textContent = "Seleccione el período de meses";
 		defaultOption.hidden = true;
 		defaultOption.disabled = true;
+		defaultOption.selected = true;
 		select.appendChild(defaultOption);
 		document.getElementById("inputMensualidad").value = "";
 		document.getElementById("inputInteresTotal").value = "";
