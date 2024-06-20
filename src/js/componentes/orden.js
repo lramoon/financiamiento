@@ -1,14 +1,18 @@
 // Función para agregar opciones a un select
 const agregarOpcionesSelect = (selectId, opciones) => {
 	const select = document.getElementById(selectId);
-	// Crear y agregar la opción por defecto al principio
-	const defaultOption = document.createElement("option");
-	defaultOption.value = "";
-	defaultOption.textContent = "Seleccione una opción";
-	defaultOption.hidden = true;
-	defaultOption.disabled = true;
-	defaultOption.selected = true;
-	select.appendChild(defaultOption);
+	select.innerHTML = ""; // Limpiar opciones existentes
+
+	// Crear y agregar la opción por defecto al principio si no es selectPeriodoDeMeses
+	if (selectId !== "selectPeriodoDeMeses") {
+		const defaultOption = document.createElement("option");
+		defaultOption.value = "";
+		defaultOption.textContent = "Seleccione una opción";
+		defaultOption.hidden = true;
+		defaultOption.disabled = true;
+		defaultOption.selected = true;
+		select.appendChild(defaultOption);
+	}
 
 	opciones.forEach((opcion) => {
 		const elementoOpcion = document.createElement("option");
@@ -16,6 +20,11 @@ const agregarOpcionesSelect = (selectId, opciones) => {
 		elementoOpcion.textContent = opcion;
 		select.appendChild(elementoOpcion);
 	});
+
+	// Establecer "24" como la opción predeterminada para selectPeriodoDeMeses
+	if (selectId === "selectPeriodoDeMeses") {
+		select.value = "24";
+	}
 };
 
 // Función para obtener valores únicos

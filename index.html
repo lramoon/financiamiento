@@ -6,9 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora financiamiento</title>
     <link rel="stylesheet" href="css/reducido.css">
-    <!-- <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
-    <script type="module" src="./node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
-    <script type="module" src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js.map"></script> -->
     <script type="module" src="./src/js/main.js"></script>
 </head>
 
@@ -16,7 +13,7 @@
 
     <div class="container my-5 p-5 bg-light rounded">
         <h2 class="text-center">Calcula tu financiamiento</h2>
-        <h3 class="text-center">Calcula tu financiamiento</h3>
+        <p class="text-center">Estos montos son una aproximación para el cálculo de tu financiamiento.</p>
 
         <div class="row justify-content-center">
             <div class="col-lg-4 col-12 my-3">
@@ -43,12 +40,13 @@
                     readonly>
             </div>
             <div class="col-lg-4 col-6 my-3">
-                <label for="inputPeriodoDeMeses" class="form-label">Periodo de meses</label>
-                <input type="text" class="form-control" id="inputPeriodoDeMeses" placeholder="Periodo de meses"
-                    aria-label="Periodo de meses" readonly>
+                <label for="selectPeriodoDeMeses" class="form-label">Período de meses</label>
+                <select class="form-select" id="selectPeriodoDeMeses" aria-label="Seleccione el periodo de mes">
+                    <option selected hidden>Seleccione el período de meses</option>
+                </select>             
             </div>
             <div class="col-lg-4 col-6 my-3">
-                <label for="inputMensualidad" class="form-label">Mensualidad</label>
+                <label for="inputMensualidad" class="form-label">Mensualidad </label>
                 <input type="text" class="form-control" id="inputMensualidad" placeholder="Mensualidad"
                     aria-label="Mensualidad" readonly>
             </div>

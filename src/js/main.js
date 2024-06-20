@@ -10,7 +10,13 @@ window.addEventListener("DOMContentLoaded", (e) => {
 		actualizarSelectsPorMarca(e.target.value, financiamiento);
 		// Limpiar inputs
 		document.getElementById("inputInicial").value = "";
-		document.getElementById("inputPeriodoDeMeses").value = "";
+		let select = document.getElementById("selectPeriodoDeMeses");
+		const defaultOption = document.createElement("option");
+		defaultOption.value = "";
+		defaultOption.textContent = "Seleccione una opción";
+		defaultOption.hidden = true;
+		defaultOption.disabled = true;
+		select.appendChild(defaultOption);
 		document.getElementById("inputMensualidad").value = "";
 		document.getElementById("inputInteresTotal").value = "";
 		document.getElementById("inputPagosTotales").value = "";
