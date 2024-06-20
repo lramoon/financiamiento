@@ -1,0 +1,53 @@
+{
+    "vehiculos": [
+        {
+            "marca": "Suzuki",
+            "modelo": "Suzuki Alto 2024",
+            "año": 2024,
+            "precio_financiamiento": 20000.00,
+            "Periodos": [
+                24,
+                48
+            ],
+            "Tasa_de_interes_anual": 16,
+            "Inicial": "50% (del valor del vehículo más gastos)",
+            "Gastos": {
+                "Comisión_flat": 350.00,
+                "Primera_Cuota_1/24": "N/A",
+                "Documento_Reserva_de_Dominio": "N/A",
+                "Gastos_Notaría_Pública": 160.00,
+                "Revisión_Tránsito_INTT": "N/A",
+                "Tramitación_Título_con_Reserva_de_Dominio": 100.00,
+                "Póliza_de_Seguro_Anual": 542.70
+            },
+            "Cuota_mensual": 528.71
+        },
+        {
+            "marca": "Suzuki",
+            "modelo": "Suzuki Dzire 2023",
+            "año": 2023,
+            "precio_financiamiento": 12950.00,
+            "Periodos": [
+                24,
+                48
+            ],
+            "Tasa_de_interes_anual": 16,
+            "Inicial": "50% (del valor del vehículo más gastos)",
+            "Gastos": {
+                "Comisión_flat": 453.25,
+                "Primera_Cuota_1/24": "N/A",
+                "Documento_Reserva_de_Dominio": "N/A",
+                "Gastos_Notaría_Pública": 160.00,
+                "Revisión_Tránsito_INTT": "N/A",
+                "Tramitación_Título_con_Reserva_de_Dominio": 100.00,
+                "Póliza_de_Seguro_Anual": 671.07
+            },
+            "Cuota_mensual": 684.68
+        }
+    ],
+    "bancos": [
+        "Bancamiga",
+        "Banco provincial",
+        "Banesco"
+    ]
+}

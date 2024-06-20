@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,45 +8,116 @@
     <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
     <script type="module" src="./node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
     <script type="module" src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js.map"></script>
+    <script type="module" src="./src/js/main.js"></script>
 </head>
+
 <body>
 
-   <div class="container my-5 p-5 bg-light rounded">
-     <h2 class="text-center">Calcula tu financiamiento</h2>
-     <h3 class="text-center">Calcula tu financiamiento</h3>
+    <div class="container my-5 p-5 bg-light rounded">
+        <h2 class="text-center">Calcula tu financiamiento</h2>
+        <h3 class="text-center">Calcula tu financiamiento</h3>
 
-     <div class="row justify-content-center">
-        <div class="col-4 my-3">
-               <label for="inputMarca" class="form-label">Marca</label>
-               <input type="text" class="form-control" id="inputMarca" placeholder="Marca" aria-label="Marca">               
+        <div class="row justify-content-center">
+            <div class="col-4 my-3">
+                <label for="inputMarca" class="form-label">Marca</label>
+                <select class="form-select" id="inputMarca"></select>
+            </div>
+            <div class="col-4 my-3">
+                <label for="inputModelo" class="form-label">Modelo</label>
+                <select class="form-select" id="inputModelo"></select>
+            </div>
+            <div class="col-4 my-3">
+                <label for="inputAnio" class="form-label">Año</label>
+                <select class="form-select" id="inputAnio"></select>
+            </div>
+            <div class="col-4 my-3">
+                <label for="inputInicial" class="form-label">Inicial</label>
+                <input type="text" class="form-control" id="inputInicial" placeholder="Inicial" aria-label="Inicial">
+            </div>
+            <div class="col-4 my-3">
+                <label for="inputPeriodoDeMeses" class="form-label">Periodo de meses</label>
+                <input type="text" class="form-control" id="inputPeriodoDeMeses" placeholder="Periodo de meses"
+                    aria-label="Periodo de meses">
+            </div>
+            <div class="col-4 my-3">
+                <label for="inputMensaulidad" class="form-label">Mensaulidad</label>
+                <input type="text" class="form-control" id="inputMensaulidad" placeholder="Mensaulidad"
+                    aria-label="Mensaulidad">
+            </div>
+            <div class="col-4 my-3">
+                <label for="inputInteresTotal" class="form-label">Interés total</label>
+                <input type="text" class="form-control" id="inputInteresTotal" placeholder="InteresTotal"
+                    aria-label="InteresTotal">
+            </div>
+            <div class="col-4 my-3">
+                <label for="inputPagosTotales" class="form-label">Pagos totales</label>
+                <input type="text" class="form-control" id="inputPagosTotales" placeholder="Pagos totales"
+                    aria-label="Pagos totales">
+            </div>
         </div>
-        <div class="col-4 my-3">
-               <label for="inputModelo" class="form-label">Modelo</label>
-               <input type="text" class="form-control" id="inputModelo" placeholder="Modelo" aria-label="Modelo">
-        </div>
-        <div class="col-4 my-3">
-               <label for="inputInicial" class="form-label">Inicial</label>
-               <input type="text" class="form-control" id="inputInicial" placeholder="Inicial" aria-label="Inicial">
-        </div>
-        <div class="col-4 my-3">
-            <label for="inputPeriodoDeMeses" class="form-label">Periodo de meses</label>
-            <input type="text" class="form-control" id="inputPeriodoDeMeses" placeholder="Periodo de meses" aria-label="Periodo de meses">
-        </div>
-        <div class="col-4 my-3">
-            <label for="inputMensaulidad" class="form-label">Mensaulidad</label>
-            <input type="text" class="form-control" id="inputMensaulidad" placeholder="Mensaulidad" aria-label="Mensaulidad">               
-        </div>
-        <div class="col-4 my-3">
-            <label for="inputInteresTotal" class="form-label">Interés total</label>
-            <input type="text" class="form-control" id="inputInteresTotal" placeholder="InteresTotal" aria-label="InteresTotal">
-        </div>
-        <div class="col-4 my-3">
-            <label for="inputPagosTotales" class="form-label">Pagos totales</label>
-            <input type="text" class="form-control" id="inputPagosTotales" placeholder="Pagos totales" aria-label="Pagos totales">
-        </div>
-     </div>
 
-   </div>
-    
+    </div>
+
+    <script>
+        // Supongamos que tenemos un objeto JSON con la información de los vehículos
+        const vehiculos = [
+            {
+                "marca": "Suzuki",
+                "modelo": "Suzuki Alto 2024",
+                "año": 2024,
+                // ... otras propiedades ...
+            },
+            {
+                "marca": "Suzuki",
+                "modelo": "Suzuki Dzire 2023",
+                "año": 2023,
+                // ... otras propiedades ...
+            }
+            // ... otros vehículos ...
+        ];
+
+        // Obtener los elementos select
+        const selectMarca = document.getElementById('inputMarca');
+        const selectModelo = document.getElementById('inputModelo');
+        const selectAnio = document.getElementById('inputAnio');
+
+        // Llenar los selectores con opciones
+        vehiculos.forEach((vehiculo) => {
+            const optionMarca = document.createElement('option');
+            optionMarca.value = vehiculo.marca;
+            optionMarca.textContent = vehiculo.marca;
+            selectMarca.appendChild(optionMarca);
+
+            // Repite lo mismo para los otros selectores (modelo y año)
+            // ...
+
+            // Escuchar eventos de cambio en los selectores
+            selectMarca.addEventListener('change', actualizarModelos);
+            // ...
+        });
+
+        // Función para actualizar los modelos según la marca seleccionada
+        function actualizarModelos() {
+            // Obtener la marca seleccionada
+            const marcaSeleccionada = selectMarca.value;
+
+            // Filtrar los modelos según la marca
+            const modelosFiltrados = vehiculos
+                .filter((vehiculo) => vehiculo.marca === marcaSeleccionada)
+                .map((vehiculo) => vehiculo.modelo);
+
+            // Limpiar el selector de modelos y agregar las opciones filtradas
+            selectModelo.innerHTML = '';
+            modelosFiltrados.forEach((modelo) => {
+                const optionModelo = document.createElement('option');
+                optionModelo.value = modelo;
+                optionModelo.textContent = modelo;
+                selectModelo.appendChild(optionModelo);
+            });
+        }
+
+    </script>
+
 </body>
+
 </html>
